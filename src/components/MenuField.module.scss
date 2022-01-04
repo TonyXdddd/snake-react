@@ -1,0 +1,29 @@
+.menuScreen {
+  margin-top: 7vw;
+  margin-left: 0.5vw;
+  width: 20vw;
+  height: 23vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'VT323', monospace;
+  background-color: black;
+}
+
+.afterGameScore {
+  font-size: 4vw;
+  color: rgba(105, 24, 226, 0.8);
+  opacity: 0.8;
+  text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(47, 29, 213, 0.5);
+  cursor: default;
+}
+
+.startTitle {
+  margin-top: 2vw;
+  font-size: 4vw;
+  color: rgba(231, 234, 236, 0.8);
+  opacity: 0.8;
+  text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
+  cursor: pointer;
+}

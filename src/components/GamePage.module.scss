@@ -1,0 +1,20 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+.backgroundCarrier {
+  height: 100%;
+  width: 35vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./../assets/images/photo-1572289758057-3e0f4327833b.jpg');
+  background-size: 160%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
