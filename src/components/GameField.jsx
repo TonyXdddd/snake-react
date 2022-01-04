@@ -9,6 +9,7 @@ import classNames from "classnames";
 import styles from './GameField.module.scss';
 
 export const GameField = ({ squaresCount, toggleGameModeToMenu }) => {
+  //***STATES***
   const [snakeDirection, setSnakeDirection] = useState('up');
   //first frame snake state(position);
   const [snakeProps, setSnakeProps] = useState({
@@ -18,6 +19,7 @@ export const GameField = ({ squaresCount, toggleGameModeToMenu }) => {
       [squaresCount - 1, 0],
     ],
   });
+
 
   //Ref assignment on game field div for key press handling activation;
   const forFocusOnFieldRef = useRef(null);
@@ -37,6 +39,8 @@ export const GameField = ({ squaresCount, toggleGameModeToMenu }) => {
   //Assignment square size based on screen size and squares count(in percentage);
   const squareSize = 100 / squaresCount;
 
+
+  //***LAYOUT SETTINGS.IMPLEMENTING SNAKE THAT DEFINED PER PREVIOUS RENDER(OR ON FIRST RENDER FIRSTLY)***
   //creation once for saving field state between renders(mutable field);
   const memorizedField = useMemo(() => {
     return mapArrTemplate.map(() => (
@@ -109,6 +113,8 @@ export const GameField = ({ squaresCount, toggleGameModeToMenu }) => {
     ));
   }
 
+
+  //***STATE UPDATING FOR NEXT RENDER***
   //Used when useEffect trigger it: at the end of setTimeout or key press.
   const snakePositionStateUpdating = () => {
     let nextRenderLayout = snakeProps.layout;
@@ -135,6 +141,7 @@ export const GameField = ({ squaresCount, toggleGameModeToMenu }) => {
       isLastSquareAdd: isNextSquareBooty,
     })
   };
+
 
   //Adding Booty after old booty is given
   useEffect(() => {
@@ -169,7 +176,7 @@ export const GameField = ({ squaresCount, toggleGameModeToMenu }) => {
       }
     }, 10);
   }
-
+  //***FIELD LAYOUT HERE***
   return (
       <div
         className={styles.field}
